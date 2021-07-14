@@ -22,7 +22,7 @@ export class ApiService {
   }
   get(id:any): Observable<Employee>{
     const url = `${this.apiUrl}/${id}`
-    return this.http.get<Employee>(url)
+    return this.http.get<Employee>(url);
   }
   update( data:any, id:any): Observable<Employee>{
     const url = `${this.apiUrl}/${id}`

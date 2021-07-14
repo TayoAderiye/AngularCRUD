@@ -12,9 +12,10 @@ import { Employee } from 'employee.model';
 export class EmployeeDashboardComponent implements OnInit {
   employees: Employee[] = []
   formValue!: FormGroup
-  employeeModelObj: Employee = new Employee()
-  showAdd!: boolean
-  showUpdate!: boolean
+  // employeeModelObj: Employee = new Employee()
+  showAdd!: boolean;
+  showUpdate!: boolean;
+  employEditId: any;
 
 
 
@@ -45,13 +46,13 @@ export class EmployeeDashboardComponent implements OnInit {
 
 
   createEmployee(){
-    this.employeeModelObj.firstName = this.formValue.value.firstName
-    this.employeeModelObj.lastName = this.formValue.value.lastName
-    this.employeeModelObj.email = this.formValue.value.email
-    this.employeeModelObj.status = this.formValue.value.status
-    this.employeeModelObj.gender = this.formValue.value.gender
+    // this.employeeModelObj.firstName = this.formValue.value.firstName
+    // this.employeeModelObj.lastName = this.formValue.value.lastName
+    // this.employeeModelObj.email = this.formValue.value.email
+    // this.employeeModelObj.status = this.formValue.value.status
+    // this.employeeModelObj.gender = this.formValue.value.gender
 
-    this.api.add(this.employeeModelObj).subscribe(res=>{
+    this.api.add(this.formValue.value).subscribe(res=>{
       console.log(res)
       alert('Employee Added Succesfully')
       let ref = document.getElementById('cancel')
@@ -77,21 +78,43 @@ export class EmployeeDashboardComponent implements OnInit {
   onEdit(employee: any){
     this.showAdd = false
     this.showUpdate = true
-    this.employeeModelObj.id = employee.id
-    this.formValue.controls['firstName'].setValue(employee.firstName)
-    this.formValue.controls['lastName'].setValue(employee.lastName)
-    this.formValue.controls['email'].setValue(employee.email)
-    this.formValue.controls['status'].setValue(employee.status)
-    this.formValue.controls['gender'].setValue(employee.gender)
+
+    this.api.get(employee.id).subscribe((result: any) => {
+      this.formValue.patchValue({...result});
+    })
+
+    // this.employeeModelObj.id = employee.id
+    // this.formValue.controls['firstName'].setValue(employee.firstName)
+    // this.formValue.controls['lastName'].setValue(employee.lastName)
+    // this.formValue.controls['email'].setValue(employee.email)
+    // this.formValue.controls['status'].setValue(employee.status)
+    // this.formValue.controls['gender'].setValue(employee.gender)
+  }
+
+  onEdit2(emplo: any){
+    this.showAdd = false
+    this.showUpdate = true
+
+    this.employEditId = emplo.id;
+    this.api.get(this.employEditId).subscribe((result: any) => {
+      this.formValue.patchValue({...result});
+    })
+
+    // this.employeeModelObj.id = employee.id
+    // this.formValue.controls['firstName'].setValue(employee.firstName)
+    // this.formValue.controls['lastName'].setValue(employee.lastName)
+    // this.formValue.controls['email'].setValue(employee.email)
+    // this.formValue.controls['status'].setValue(employee.status)
+    // this.formValue.controls['gender'].setValue(employee.gender)
   }
   updateEmployeeDetails(){
-    this.employeeModelObj.firstName = this.formValue.value.firstName
-    this.employeeModelObj.lastName = this.formValue.value.lastName
-    this.employeeModelObj.email = this.formValue.value.email
-    this.employeeModelObj.status = this.formValue.value.status
-    this.employeeModelObj.gender = this.formValue.value.gender
+    // this.employeeModelObj.firstName = this.formValue.value.firstName
+    // this.employeeModelObj.lastName = this.formValue.value.lastName
+    // this.employeeModelObj.email = this.formValue.value.email
+    // this.employeeModelObj.status = this.formValue.value.status
+    // this.employeeModelObj.gender = this.formValue.value.gender
 
-    this.api.update(this.employeeModelObj, this.employeeModelObj.id).subscribe(res=>{
+    this.api.update(this.formValue.value, this.employEditId).subscribe(res=>{
       alert("Updated Successfully")
       let ref = document.getElementById('cancel')
       ref?.click()

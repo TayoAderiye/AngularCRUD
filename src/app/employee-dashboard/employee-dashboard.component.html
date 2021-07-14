@@ -27,7 +27,7 @@
       <td>{{employee.gender}}</td>
       <td  [ngStyle]="{'color': (employee.status === 'Active') ? 'green' :  'red' }">{{employee.status}}</td>
       <td>
-        <button (click)="onEdit(employee)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-info">Edit</button>
+        <button (click)="onEdit2(employee)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"  class="btn btn-info">Edit</button>
         <button (click)="deleteEmployee(employee)" class="btn btn-danger mx-3">Delete</button>
       </td>
     </tr>

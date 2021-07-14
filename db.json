@@ -1,12 +1,12 @@
 {
   "employees": [
     {
-      "id": 1,
       "firstName": "Vlad",
       "lastName": "Burke",
       "email": "vburke0@ezinearticles.com",
+      "status": "Active",
       "gender": "Bigender",
-      "status": "Inactive"
+      "id": 1
     },
     {
       "id": 2,
@@ -17,12 +17,12 @@
       "status": "Active"
     },
     {
-      "id": 3,
       "firstName": "Gussy",
       "lastName": "Daens",
       "email": "gdaens2@toplist.cz",
       "status": "Inactive",
-      "gender": "Genderqueer"
+      "gender": "Genderqueer",
+      "id": 3
     },
     {
       "id": 4,
@@ -71,14 +71,6 @@
       "email": "harmitage8@wisc.edu",
       "gender": "Male",
       "status": "Active"
-    },
-    {
-      "id": 10,
-      "firstName": "Lonni",
-      "lastName": "Mandre",
-      "email": "lmandre9@foxnews.com",
-      "gender": "Male",
-      "status": "Inactive"
     }
   ]
 }
