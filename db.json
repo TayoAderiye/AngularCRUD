@@ -1,0 +1,84 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "Vlad",
+      "lastName": "Burke",
+      "email": "vburke0@ezinearticles.com",
+      "gender": "Bigender",
+      "status": "Inactive"
+    },
+    {
+      "id": 2,
+      "firstName": "Daphne",
+      "lastName": "McKniely",
+      "email": "dmckniely1@netlog.com",
+      "gender": "Polygender",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "firstName": "Gussy",
+      "lastName": "Daens",
+      "email": "gdaens2@toplist.cz",
+      "status": "Inactive",
+      "gender": "Genderqueer"
+    },
+    {
+      "id": 4,
+      "firstName": "Aguste",
+      "lastName": "Gritten",
+      "email": "agritten3@zimbio.com",
+      "gender": "Genderqueer",
+      "status": "Inactive"
+    },
+    {
+      "id": 5,
+      "firstName": "Willie",
+      "lastName": "Connah",
+      "email": "wconnah4@cmu.edu",
+      "gender": "Non-binary",
+      "status": "Active"
+    },
+    {
+      "id": 6,
+      "firstName": "Joseph",
+      "lastName": "Pettyfer",
+      "email": "jpettyfer5@oaic.gov.au",
+      "gender": "Genderfluid",
+      "status": "Inactive"
+    },
+    {
+      "id": 7,
+      "firstName": "Bunny",
+      "lastName": "Witchell",
+      "email": "bwitchell6@census.gov",
+      "gender": "Genderqueer",
+      "status": "Active"
+    },
+    {
+      "id": 8,
+      "firstName": "Laurianne",
+      "lastName": "Simondson",
+      "email": "lsimondson7@homestead.com",
+      "gender": "Genderqueer",
+      "status": "Inactive"
+    },
+    {
+      "id": 9,
+      "firstName": "Haydon",
+      "lastName": "Armitage",
+      "email": "harmitage8@wisc.edu",
+      "gender": "Male",
+      "status": "Active"
+    },
+    {
+      "id": 10,
+      "firstName": "Lonni",
+      "lastName": "Mandre",
+      "email": "lmandre9@foxnews.com",
+      "gender": "Male",
+      "status": "Inactive"
+    }
+  ]
+}
